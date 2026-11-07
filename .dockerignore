@@ -1,0 +1,11 @@
+.git
+.gitignore
+.DS_Store
+dev.sh
+docs
+tools
+*.md
+Dockerfile
+.dockerignore
+site/assets/img/originals
+site/assets/css/input.css
