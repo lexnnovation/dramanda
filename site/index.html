@@ -45,7 +45,7 @@
       </a>
 
       <nav aria-label="Main" class="hidden items-center lg:flex">
-        <ul class="flex items-center">
+        <ul class="flex items-center gap-1 rounded-full bg-white p-1.5 shadow-[0_8px_24px_rgba(0,0,0,.25)]">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#about" class="nav-link">About Dr. Amanda</a></li>
           <li><a href="#books" class="nav-link">Books</a></li>
@@ -53,7 +53,7 @@
           <li><a href="#clients" class="nav-link">Clients</a></li>
           <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
         </ul>
-        <a href="#getintouch" class="ml-5 rounded-full bg-turquoise font-bold px-5 py-[14px] text-base leading-none text-navy transition hover:-translate-y-0.5 hover:bg-white hover:text-navy">GET IN TOUCH</a>
+        <a href="#getintouch" class="btn btn-sm ml-3">GET IN TOUCH</a>
       </nav>
 
       <button type="button" id="menu-toggle" class="flex h-11 w-11 items-center justify-center rounded-lg text-white lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -89,11 +89,12 @@
       <div class="relative aspect-video w-full overflow-hidden bg-black bg-cover bg-center [container-type:size] lg:aspect-[2110/1427]" style="background-image:url(assets/img/hero-poster.webp)">
         <!-- Vimeo background player (muted, looping, no controls). src is set by main.js unless the visitor prefers reduced motion. -->
         <iframe id="hero-video" class="absolute left-1/2 top-0 h-[max(115.5cqh,56.25cqw)] w-[max(100cqw,205.3cqh)] -translate-x-1/2 -translate-y-[13.2%] border-0" title="Dr. Amanda Foo-Ryland: introduction teaser" data-src="https://player.vimeo.com/video/520179318?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" tabindex="-1" aria-hidden="true"></iframe>
+        <a href="#stats" class="scroll-cue" aria-label="Scroll to content"><span>Scroll</span></a>
       </div>
     </section>
 
     <!-- ===== Stats ===== -->
-    <section id="stats" class="pb-[41px] pt-[35px] max-lg:py-6" aria-label="Highlights">
+    <section id="stats" class="bg-offwhite py-[56px] max-lg:py-10" aria-label="Highlights">
       <ul id="stats-row" class="mx-auto flex max-w-[1140px] flex-wrap justify-center gap-3 px-5 md:gap-5">
         <li class="stat-card">
           <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3.2"/></svg>
@@ -124,43 +125,44 @@
     </section>
 
     <!-- ===== About ===== -->
-    <section id="about" class="pb-[60px] pt-[50px] max-lg:py-8">
+    <section id="about" class="py-[90px] max-lg:py-14">
       <div class="mx-auto grid max-w-[1129px] gap-10 px-5 lg:grid-cols-[404fr_573fr] lg:gap-x-[112px]">
         <div class="mx-auto w-full max-w-[404px]">
-          <img src="assets/img/amanda-404.webp" srcset="assets/img/amanda-404.webp 404w, assets/img/amanda-808.webp 808w" sizes="(min-width:1024px) 404px, 90vw" width="404" height="500" alt="Dr. Amanda Foo-Ryland smiling, wearing a patterned turquoise blouse" class="h-auto w-full rounded-[23px] object-cover lg:h-[500px]" loading="lazy">
+          <img src="assets/img/amanda-404.webp" srcset="assets/img/amanda-404.webp 404w, assets/img/amanda-808.webp 808w" sizes="(min-width:1024px) 404px, 90vw" width="404" height="500" alt="Dr. Amanda Foo-Ryland smiling, wearing a patterned turquoise blouse" class="h-auto w-full rounded-[28px] object-cover shadow-[0_30px_60px_-30px_rgba(26,63,80,.55)] lg:h-[500px]" loading="lazy">
           <img src="assets/img/logo-blue-404.webp" srcset="assets/img/logo-blue-404.webp 404w, assets/img/logo-blue-808.webp 808w" sizes="404px" width="404" height="117" alt="Dr. Amanda Foo-Ryland signature, International Speaker, #1 Best Selling Author" class="mt-[19px] h-auto w-full" loading="lazy">
         </div>
         <div class="max-w-[573px]">
-          <h2 class="text-[26px] font-normal leading-[44px]">ABOUT ME</h2>
+          <h2 class="text-sm font-semibold uppercase tracking-[.22em] text-navy/70">About me</h2>
           <img src="assets/img/logo-blue-404.webp" srcset="assets/img/logo-blue-404.webp 404w, assets/img/logo-blue-808.webp 808w" sizes="378px" width="378" height="110" alt="" class="my-4 h-auto w-[378px] max-w-full" loading="lazy">
-          <div class="font-nav text-[14px] font-semibold leading-[1.7] tracking-[-0.4px] [&>p]:mb-6">
+          <div class="text-[17px] leading-[1.75] text-navy/90 [&>p]:mb-5">
             <p>Dr Amanda is from the UK and lives in Portugal and travels the world running courses in New Zealand, Australia and the UK. She has over 30 years of experience in Human Development and Coaching and continues to learn and grow. She worked in the corporate world for 16 years, working with the Estée Lauder group, starting her career on the counter and finally becoming the Clinique Director of Education for Europe, the Middle East and Africa, based in London.</p>
             <p>Amanda’s mission is to empower people to live passionately. Her keynotes focus on mental resilience and mental well being in the face of adversity. We only get one life, it’s happening right now and not always the way we want it. So when s#!t gets real, Amanda has the tools and life experience to help you get out of it, no matter how deep it is.</p>
             <p>Why not have someone that has lived through the hard lessons in life and come out the other side stronger than ever?</p>
             <p>Do you want someone that will keep you engaged, has high energy, is captivating, will challenge your view of yourself and your view of the world whilst all the time tailoring her time with you to best achieve your desired goals?</p>
             <p>Amanda is widely respected and is frequently asked to return due to her ability in sharing real business and life solutions.</p>
           </div>
-          <a href="#getintouch" class="mt-3 inline-block rounded-full bg-navy font-bold px-[27px] py-[13px] text-[20px] leading-7 text-white shadow-[0_6px_16px_rgba(26,63,80,.25)] transition hover:-translate-y-0.5 hover:bg-turquoise">GET IN TOUCH</a>
+          <a href="#getintouch" class="btn mt-4">GET IN TOUCH</a>
         </div>
       </div>
     </section>
 
     <!-- ===== Show Reel ===== -->
-    <section id="showreel" class="pt-[51px]" aria-labelledby="showreel-title">
-      <h2 id="showreel-title" class="sec-title">Dr. Amanda's Show Reel</h2>
-      <span class="sec-rule" aria-hidden="true"></span>
-      <div class="mt-[30px] aspect-video w-full bg-black bg-cover bg-center" style="background-image:url(assets/img/showreel-poster.webp)">
+    <section id="showreel" class="bg-offwhite py-[90px] max-lg:py-14" aria-labelledby="showreel-title">
+      <h2 id="showreel-title" class="sec-title">Dr. Amanda's <span class="hl">Show Reel</span></h2>
+      <div class="mx-auto mt-10 max-w-[1140px] px-5">
+        <div class="aspect-video w-full overflow-hidden rounded-[24px] bg-black bg-cover bg-center shadow-[0_30px_60px_-30px_rgba(26,63,80,.6)]" style="background-image:url(assets/img/showreel-poster.webp)">
         <!-- Vimeo 932886427. main.js loads it shortly before it scrolls into view (muted, looping, with controls, as on the live site). -->
         <iframe id="showreel-video" class="h-full w-full border-0" title="Dr Amanda Speaker Showreel" data-src="https://player.vimeo.com/video/932886427" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
       </div>
     </section>
 
     <!-- ===== As seen on ===== -->
-    <section id="seenon" class="py-[50px]" aria-labelledby="seenon-title">
+    <section id="seenon" class="py-[80px] max-lg:py-12" aria-labelledby="seenon-title">
       <div class="mx-auto max-w-[1100px] px-5">
-        <h2 id="seenon-title" class="sec-title">As seen on</h2>
-        <span class="sec-rule" aria-hidden="true"></span>
-        <div class="carousel mt-10 [--per:3] lg:[--per:7]" data-carousel data-autoplay="5000" role="region" aria-roledescription="carousel" aria-label="Media outlets Dr. Amanda has appeared on">
+        <h2 id="seenon-title" class="sec-title">As <span class="hl">seen on</span></h2>
+      </div>
+        <div class="carousel logo-strip mt-10 w-full [--per:3] md:[--per:5] lg:[--per:7] xl:[--per:9]" data-carousel data-autoplay="5000" role="region" aria-roledescription="carousel" aria-label="Media outlets Dr. Amanda has appeared on">
           <div class="car-stage">
             <button type="button" class="car-btn car-prev" data-prev aria-label="Previous logos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
             <ul class="car-track" data-track tabindex="0">
@@ -182,14 +184,12 @@
           </div>
           <div class="car-dots" data-dots></div>
         </div>
-      </div>
     </section>
 
     <!-- ===== Books ===== -->
-    <section id="books" class="bg-navy py-[70px] max-lg:py-12" aria-labelledby="books-title">
+    <section id="books" class="bg-navy py-[90px] max-lg:py-14" aria-labelledby="books-title">
       <div class="mx-auto max-w-[1140px] px-5">
-        <h2 id="books-title" class="sec-title text-white">Books</h2>
-        <span class="sec-rule bg-white" aria-hidden="true"></span>
+        <h2 id="books-title" class="sec-title text-white"><span class="hl">Books</span></h2>
 
         <!-- Neural Coding -->
         <article class="book" aria-labelledby="book-1-title">
@@ -199,21 +199,19 @@
             <p>It’s your mindset that makes all the difference.<br>Changing your bad habits, behaviour or beliefs can be as easy as deleting an app on your phone. Your neurology can be recoded quickly and easily using neural coding, which has been changing lives for decades.</p>
             <h4 class="avail-title">Available on</h4>
             <ul class="avail-logos">
-              <li><a href="https://www.amazon.co.uk/dp/B0CKGQC6D6/" target="_blank" rel="noopener" aria-label="Buy Neural Coding on Amazon"><img src="assets/img/logo-amazon.webp" width="330" height="99" alt="Amazon" class="h-[60px] w-auto" loading="lazy"></a></li>
-              <li><img src="assets/img/logo-audible.webp" width="400" height="132" alt="Audible" class="h-[60px] w-auto" loading="lazy"></li>
-              <li><img src="assets/img/logo-bn.webp" width="240" height="140" alt="Barnes &amp; Noble" class="h-[60px] w-auto" loading="lazy"></li>
+              <li><a href="https://www.amazon.co.uk/dp/B0CKGQC6D6/" target="_blank" rel="noopener" aria-label="Buy Neural Coding on Amazon"><img src="assets/img/logo-amazon.webp" width="330" height="99" alt="Amazon" class="h-11 w-auto" loading="lazy"></a></li>
+              <li><img src="assets/img/logo-audible.webp" width="400" height="132" alt="Audible" class="h-11 w-auto" loading="lazy"></li>
+              <li><img src="assets/img/logo-bn.webp" width="240" height="140" alt="Barnes &amp; Noble" class="h-11 w-auto" loading="lazy"></li>
             </ul>
           </div>
           <div class="book-cover">
-            <img src="assets/img/book-neural-coding-440.webp" srcset="assets/img/book-neural-coding-440.webp 440w, assets/img/book-neural-coding-880.webp 880w" sizes="(min-width:1024px) 400px, 80vw" width="440" height="462" alt="Neural Coding by Dr Amanda Foo-Ryland: the surprisingly simple way to create unthinkable change. #1 Amazon Best Seller" loading="lazy">
-            <a href="https://www.amazon.co.uk/dp/B0CKGQC6D6/" target="_blank" rel="noopener" class="buy-btn">BUY BOOK NOW</a>
+            <div class="book-art"><img src="assets/img/book-neural-coding-440.webp" srcset="assets/img/book-neural-coding-440.webp 440w, assets/img/book-neural-coding-880.webp 880w" sizes="(min-width:1024px) 400px, 80vw" width="440" height="462" alt="Neural Coding by Dr Amanda Foo-Ryland: the surprisingly simple way to create unthinkable change. #1 Amazon Best Seller" loading="lazy"></div>
+            <a href="https://www.amazon.co.uk/dp/B0CKGQC6D6/" target="_blank" rel="noopener" class="btn">BUY BOOK NOW</a>
           </div>
         </article>
 
-        <hr class="book-divider">
-
         <!-- Knowing You -->
-        <article class="book" aria-labelledby="book-2-title">
+        <article class="book book-flip" aria-labelledby="book-2-title">
           <div class="book-text">
             <h3 id="book-2-title" class="book-title">Knowing You</h3>
             <p>Many people spend a lifetime waiting for something to happen to them before their life can be changed. Winning the lottery; getting a better job; starting a new relationship; moving house; making more money; being in better health etc, yet it never happens.</p>
@@ -221,24 +219,23 @@
             <p>In Knowing You, Dr Amanda Foo-Ryland reveals how external elements cannot make life better and that it is in fact, when and how people take control of their lives, change course and become their own navigators that things actually start to change for them.</p>
             <h4 class="avail-title">Available on</h4>
             <ul class="avail-logos">
-              <li><a href="https://www.amazon.co.uk/gp/product/B0BJ7KJVVV/ref=dbs_a_def_rwt_bibl_vppi_i0" target="_blank" rel="noopener" aria-label="Buy Knowing You on Amazon"><img src="assets/img/logo-amazon.webp" width="330" height="99" alt="Amazon" class="h-[60px] w-auto" loading="lazy"></a></li>
-              <li><img src="assets/img/logo-audible.webp" width="400" height="132" alt="Audible" class="h-[60px] w-auto" loading="lazy"></li>
-              <li><img src="assets/img/logo-bn.webp" width="240" height="140" alt="Barnes &amp; Noble" class="h-[60px] w-auto" loading="lazy"></li>
+              <li><a href="https://www.amazon.co.uk/gp/product/B0BJ7KJVVV/ref=dbs_a_def_rwt_bibl_vppi_i0" target="_blank" rel="noopener" aria-label="Buy Knowing You on Amazon"><img src="assets/img/logo-amazon.webp" width="330" height="99" alt="Amazon" class="h-11 w-auto" loading="lazy"></a></li>
+              <li><img src="assets/img/logo-audible.webp" width="400" height="132" alt="Audible" class="h-11 w-auto" loading="lazy"></li>
+              <li><img src="assets/img/logo-bn.webp" width="240" height="140" alt="Barnes &amp; Noble" class="h-11 w-auto" loading="lazy"></li>
             </ul>
           </div>
           <div class="book-cover">
-            <img src="assets/img/book-knowing-you-440.webp" srcset="assets/img/book-knowing-you-440.webp 440w, assets/img/book-knowing-you-880.webp 880w" sizes="(min-width:1024px) 400px, 80vw" width="440" height="462" alt="Knowing You by Dr Amanda Foo-Ryland: the difference that makes the difference. Best Seller" loading="lazy">
-            <a href="https://www.amazon.co.uk/gp/product/B0BJ7KJVVV/ref=dbs_a_def_rwt_bibl_vppi_i0" target="_blank" rel="noopener" class="buy-btn">BUY BOOK NOW</a>
+            <div class="book-art"><img src="assets/img/book-knowing-you-440.webp" srcset="assets/img/book-knowing-you-440.webp 440w, assets/img/book-knowing-you-880.webp 880w" sizes="(min-width:1024px) 400px, 80vw" width="440" height="462" alt="Knowing You by Dr Amanda Foo-Ryland: the difference that makes the difference. Best Seller" loading="lazy"></div>
+            <a href="https://www.amazon.co.uk/gp/product/B0BJ7KJVVV/ref=dbs_a_def_rwt_bibl_vppi_i0" target="_blank" rel="noopener" class="btn">BUY BOOK NOW</a>
           </div>
         </article>
       </div>
     </section>
 
     <!-- ===== Videos ===== -->
-    <section id="videos" class="py-[70px] max-lg:py-12" aria-labelledby="videos-title">
+    <section id="videos" class="bg-offwhite py-[90px] max-lg:py-14" aria-labelledby="videos-title">
       <div class="mx-auto max-w-[1160px] px-5">
-        <h2 id="videos-title" class="sec-title">Videos</h2>
-        <span class="sec-rule" aria-hidden="true"></span>
+        <h2 id="videos-title" class="sec-title"><span class="hl">Videos</span></h2>
         <ul class="vid-grid">
         <li class="vid-item">
           <h3 class="vid-title">Ted Talk</h3>
@@ -308,11 +305,11 @@
     </section>
 
     <!-- ===== Clients ===== -->
-    <section id="clients" class="py-[70px] max-lg:py-12" aria-labelledby="clients-title">
+    <section id="clients" class="on-turq bg-turquoise py-[90px] max-lg:py-14" aria-labelledby="clients-title">
       <div class="mx-auto max-w-[1100px] px-5">
-        <h2 id="clients-title" class="sec-title">Clients</h2>
-        <span class="sec-rule" aria-hidden="true"></span>
-        <div class="carousel mt-10 [--per:2] lg:[--per:5]" data-carousel data-autoplay="5000" role="region" aria-roledescription="carousel" aria-label="Clients Dr. Amanda has worked with">
+        <h2 id="clients-title" class="sec-title"><span class="hl">Clients</span></h2>
+      </div>
+        <div class="carousel logo-tiles on-turq mt-12 w-full [--per:2] md:[--per:3] lg:[--per:5] xl:[--per:6]" data-carousel data-autoplay="5000" role="region" aria-roledescription="carousel" aria-label="Clients Dr. Amanda has worked with">
           <div class="car-stage">
             <button type="button" class="car-btn car-prev" data-prev aria-label="Previous logos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
             <ul class="car-track" data-track tabindex="0">
@@ -340,14 +337,12 @@
           </div>
           <div class="car-dots" data-dots></div>
         </div>
-      </div>
     </section>
 
     <!-- ===== Testimonials (video) ===== -->
-    <section id="testimonials" class="pb-[136px] pt-[51px] max-lg:pb-16" aria-labelledby="testimonials-title">
+    <section id="testimonials" class="bg-offwhite py-[90px] max-lg:py-14" aria-labelledby="testimonials-title">
       <div class="mx-auto max-w-[1140px] px-5">
-        <h2 id="testimonials-title" class="sec-title">Testimonials</h2>
-        <span class="sec-rule" aria-hidden="true"></span>
+        <h2 id="testimonials-title" class="sec-title"><span class="hl">Testimonials</span></h2>
         <div class="mt-[30px]">
           <a class="vid" href="https://www.youtube.com/watch?v=cIQAjVArWEc" data-provider="youtube" data-id="cIQAjVArWEc" data-title="Dr. Amanda Foo-Ryland - What Clients are saying" target="_blank" rel="noopener">
               <img src="assets/img/thumb-testimonials.webp" width="1280" height="720" alt="" loading="lazy" decoding="async">
@@ -355,20 +350,7 @@
               <span class="sr-only">Play video: Dr. Amanda Foo-Ryland - What Clients are saying</span>
             </a>
         </div>
-      </div>
-    </section>
-
-    <!-- ===== Get in Touch ===== -->
-    <section id="getintouch" class="relative isolate overflow-hidden bg-navy pt-[100px] max-lg:pt-16" aria-labelledby="getintouch-title">
-      <img src="assets/img/contact-bg.webp" width="1600" height="1000" alt="" loading="lazy" decoding="async" class="absolute inset-0 -z-20 h-full w-full object-cover">
-      <div class="absolute inset-0 -z-10 bg-navy/[.88]" aria-hidden="true"></div>
-
-      <div class="mx-auto max-w-[1140px] px-5">
-        <h2 id="getintouch-title" class="sec-title text-white">Get in Touch with me</h2>
-        <img src="assets/img/signature-turquoise.webp" width="800" height="232" alt="" loading="lazy" decoding="async" class="mx-auto mt-4 h-auto w-[260px] lg:w-[340px]">
-        <span class="sec-rule bg-turquoise" aria-hidden="true"></span>
-
-        <div class="carousel car-cards on-dark mt-[18px] [--per:1] md:[--per:2] lg:[--per:3]" data-carousel data-autoplay="6000" role="region" aria-roledescription="carousel" aria-label="What clients say about Dr. Amanda">
+        <div class="carousel car-cards mt-14 [--per:1] md:[--per:2] lg:[--per:3]" data-carousel data-autoplay="6000" role="region" aria-roledescription="carousel" aria-label="What clients say about Dr. Amanda">
           <div class="car-stage">
             <button type="button" class="car-btn car-prev" data-prev aria-label="Previous testimonials"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
             <ul class="car-track" data-track tabindex="0">
@@ -468,9 +450,21 @@
           <div class="car-dots" data-dots></div>
         </div>
       </div>
+    </section>
 
-      <!-- Contact panel: two turquoise columns, flush with the footer -->
-      <div class="mx-auto mt-[70px] grid max-w-[1140px] shadow-[0_0_20px_#212121] max-lg:mt-12 lg:grid-cols-2">
+    <!-- ===== Get in Touch ===== -->
+    <section id="getintouch" class="relative isolate overflow-hidden bg-navy pt-[100px] max-lg:pt-16" aria-labelledby="getintouch-title">
+      <img src="assets/img/contact-bg.webp" width="1600" height="1000" alt="" loading="lazy" decoding="async" class="absolute inset-0 -z-20 h-full w-full object-cover">
+      <div class="absolute inset-0 -z-10 bg-navy/[.88]" aria-hidden="true"></div>
+
+      <div class="mx-auto max-w-[1140px] px-5">
+        <h2 id="getintouch-title" class="sec-title text-white">Get in <span class="hl">Touch</span> with me</h2>
+        <img src="assets/img/signature-turquoise.webp" width="800" height="232" alt="" loading="lazy" decoding="async" class="mx-auto mt-4 h-auto w-[260px] lg:w-[340px]">
+
+      </div>
+
+      <!-- Contact panel: two turquoise columns in one rounded card -->
+      <div class="mx-auto mb-[90px] mt-14 grid w-[calc(100%-40px)] max-w-[1100px] overflow-hidden rounded-[28px] shadow-[0_30px_60px_-20px_rgba(0,0,0,.6)] max-lg:mb-14 max-lg:mt-12 lg:grid-cols-2">
         <div class="bg-turquoise p-[45px] max-lg:p-[30px]">
           <h3 class="panel-title">We’d love to hear from you.</h3>
           <span class="panel-rule" aria-hidden="true"></span>
@@ -526,7 +520,7 @@
             <div class="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
               <label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
             </div>
-            <button type="submit" class="enquire-btn">Enquire Now</button>
+            <button type="submit" class="btn btn-navy">Enquire Now</button>
             <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -535,7 +529,7 @@
   </main>
 
   <!-- ===== Footer ===== -->
-  <footer class="bg-navy text-white">
+  <footer class="border-t border-white/10 bg-navy text-white">
     <div class="mx-auto max-w-[1140px] px-5 py-12 text-center">
       <a href="#home" class="inline-block" aria-label="Dr. Amanda Foo-Ryland, back to top">
         <img src="assets/img/logo-white-544.webp" width="272" height="79" alt="Dr. Amanda Foo-Ryland Logo" loading="lazy" decoding="async" class="h-auto w-[220px]">
