@@ -19,9 +19,9 @@ A static one-page rebuild of https://dramandafoo-ryland.com/ (was WordPress + El
 
 1. Create a form at https://formspree.io that sends to `amanda@yourlifeliveit.com`.
 2. In the form's settings, add the site domain to the allowed domains.
-3. Copy the form ID (the part after `/f/`) and replace `FORM_ID` in `site/index.html`:
-   `<form id="contact-form" action="https://formspree.io/f/FORM_ID" ...>`
-   It appears once. Search for `FORM_ID`.
+3. The form ID (the part after `/f/`) is set in `site/index.html` (currently `mdeevwzw`):
+   `<form id="contact-form" action="https://formspree.io/f/mdeevwzw" ...>`
+   It appears once. Change it there if you ever create a new form.
 4. Rebuild if needed, commit, redeploy, then send a test enquiry.
 
 The fields are `name`, `email`, `location`, `present`, `hours`, `budget` and `message`. `email` is used as the Reply-To. Spam protection is Formspree's filtering plus the hidden `_gotcha` field.
@@ -49,8 +49,9 @@ Cache rules: fonts one year, images 30 days (rename a file when you replace it),
 
 ## Open items (TODO)
 
-- [ ] **Formspree form ID**: replace `FORM_ID` (see above). The form can't send until this is done.
-- [ ] **Meta description**: a draft in `site/index.html` (also used in the Open Graph and JSON-LD data). Confirm or edit the text.
+- [x] **Formspree form ID** is set (`mdeevwzw`). Still to check: the recipient email is verified, the domain is allowed, and a test enquiry arrives.
+- [ ] **Formspree recipient**: the form currently emails the owner's address. Once Amanda has verified her email in Formspree and the new site is live, switch the recipient to `amanda@yourlifeliveit.com` (Workflow/Integration tab), then send a test enquiry and confirm it reaches her.
+- [x] **Meta description** approved by the owner (long version, as in `site/index.html`).
 - [ ] **Video descriptions**: the shortened one-line versions are in use. The original live wording is in `docs/content.md`.
 - [ ] **Dream Teams thumbnail** is low resolution (480×270, the only size YouTube provides). A custom thumbnail would help.
 - [ ] **Testimonial avatars** are small (100 px) and look soft on retina screens. Better originals would help.
