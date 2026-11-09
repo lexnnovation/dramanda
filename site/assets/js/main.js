@@ -247,6 +247,47 @@
     a.replaceWith(box);
     f.focus();
   });
+  /* ---------- Word-by-word reveal for big headings (skipped for reduced motion) ---------- */
+  if (!reduced && 'IntersectionObserver' in window) {
+    const targets = document.querySelectorAll('.sec-title, .book-title, .pullquote');
+    let n;
+    const wrap = (node) => {
+      [...node.childNodes].forEach((c) => {
+        if (c.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach((t) => {
+            if (!t) return;
+            if (/^\s+$/.test(t)) frag.appendChild(document.createTextNode(t));
+            else {
+              const w = document.createElement('span');
+              w.className = 'w';
+              w.style.setProperty('--i', n++);
+              w.textContent = t;
+              frag.appendChild(w);
+            }
+          });
+          c.replaceWith(frag);
+        } else if (c.nodeType === 1) wrap(c);
+      });
+    };
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.4 }
+    );
+    targets.forEach((el) => {
+      n = 0;
+      wrap(el);
+      el.classList.add('split');
+      io.observe(el);
+    });
+  }
+
   /* ---------- Footer year ---------- */
   const yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();

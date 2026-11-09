@@ -6,6 +6,13 @@
 
 /* ---------- Self-hosted fonts (latin subset, from the live site's families) ---------- */
 @font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url("../fonts/poppins-300-italic.woff2") format("woff2");
+}
+@font-face {
   font-family: "Lato";
   font-weight: 400;
   font-style: normal;
@@ -346,6 +353,34 @@
     color: var(--color-navy);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+  }
+
+  /* Pull-quote in About */
+  .pullquote {
+    margin: 8px 0 28px;
+    font-family: var(--font-heading);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--color-navy);
+  }
+  .pullquote i {
+    font-weight: 300;
+    font-style: italic;
+    background: linear-gradient(transparent 62%, rgb(82 202 211 / 0.6) 62%);
+  }
+  /* Word-by-word reveal (added by main.js, never hides anything without JS) */
+  .split .w {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.55em);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: calc(var(--i) * 70ms);
+  }
+  .split.is-in .w {
+    opacity: 1;
+    transform: none;
   }
 
   /* ----- Carousel (scroll-snap; behaviour in main.js) ----- */
