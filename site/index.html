@@ -40,7 +40,7 @@
     <!-- Soft dark fade behind the bar before scrolling, so the white menu stays readable over bright video frames. Fades out once the bar gets its solid background. -->
     <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[150%] bg-gradient-to-b from-black/70 via-black/35 to-transparent transition-opacity duration-300 in-data-[scrolled=true]:opacity-0" aria-hidden="true"></div>
     <div class="mx-auto flex h-[76px] max-w-[1140px] items-center justify-between px-5 transition-[height] duration-300 lg:h-[96px] lg:data-[scrolled=true]:h-[76px]" id="header-bar">
-      <a href="#home" class="block shrink-0" aria-label="Dr. Amanda Foo-Ryland, back to top">
+      <a href="/" data-top class="block shrink-0" aria-label="Dr. Amanda Foo-Ryland, back to top">
         <img src="assets/img/logo-white-544.webp" width="272" height="79" alt="Dr. Amanda Foo-Ryland Logo" class="h-auto w-[160px] lg:w-[205px]">
       </a>
 
@@ -549,5 +549,9 @@
       <p class="mt-1 text-[15px]">Created by <a href="https://x.com/lexnnovation" target="_blank" rel="noopener" class="foot-link underline underline-offset-2">Lexnnovation</a></p>
     </div>
   </footer>
+  <!-- Back to top: appears after scrolling down -->
+  <a href="/" data-top id="to-top" aria-label="Back to top" data-show="false" class="invisible fixed bottom-5 right-5 z-40 flex h-12 w-12 translate-y-3 items-center justify-center rounded-full bg-turquoise text-navy opacity-0 shadow-[0_10px_24px_-8px_rgba(0,0,0,.5)] transition duration-300 hover:bg-white data-[show=true]:visible data-[show=true]:translate-y-0 data-[show=true]:opacity-100 max-lg:bottom-4 max-lg:right-4">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
 </body>
 </html>

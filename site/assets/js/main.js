@@ -9,13 +9,25 @@
   /* ---------- Sticky header state ---------- */
   const header = document.getElementById('site-header');
   const bar = document.getElementById('header-bar');
+  const toTop = document.getElementById('to-top');
   const onScroll = () => {
     const v = String(window.scrollY > 24);
     header.dataset.scrolled = v;
     bar.dataset.scrolled = v;
+    if (toTop) toTop.dataset.show = String(window.scrollY > 700);
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Logo links: scroll to the top and keep the address clean ("/" instead of "/#home") ---------- */
+  document.querySelectorAll('a[data-top]').forEach((a) =>
+    a.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+      history.replaceState(null, '', location.pathname + location.search);
+    })
+  );
 
   /* ---------- Mobile menu ---------- */
   const toggle = document.getElementById('menu-toggle');
