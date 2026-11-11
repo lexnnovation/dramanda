@@ -4,56 +4,20 @@
 @source "../../index.html";
 @source "../js/main.js";
 
-/* ---------- Self-hosted fonts (latin subset, from the live site's families) ---------- */
+/* ---------- Self-hosted font: Plus Jakarta Sans (variable, latin subset) ---------- */
 @font-face {
-  font-family: "Poppins";
-  font-weight: 300;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/plus-jakarta-sans.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-weight: 200 800;
   font-style: italic;
   font-display: swap;
-  src: url("../fonts/poppins-300-italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Lato";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: url("../fonts/lato-400.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Lato";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url("../fonts/lato-700.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Poppins";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: url("../fonts/poppins-400.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Poppins";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: url("../fonts/poppins-500.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Poppins";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url("../fonts/poppins-700.woff2") format("woff2");
-}
-/* Montserrat is a variable font: one file covers every weight */
-@font-face {
-  font-family: "Montserrat";
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-  src: url("../fonts/montserrat.woff2") format("woff2");
+  src: url("../fonts/plus-jakarta-sans-italic.woff2") format("woff2");
 }
 
 /* ---------- Design tokens (values measured on the live site, see docs/audit.md) ---------- */
@@ -64,9 +28,9 @@
   --color-offwhite: #f6f8f5;        /* nav link text */
   --color-ink: #000000;             /* hero */
 
-  --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-nav: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-nav: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
   --container-site: 1140px;         /* live content width */
   --radius-card: 23px;              /* stat / testimonial cards (23-24px live) */
@@ -232,8 +196,8 @@
     transform: translateY(-16px);
     text-align: center;
     font-size: 19px;
-    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s;
-    transition-delay: calc((6 - var(--i, 0)) * 45ms);
+    transition: opacity 0.28s cubic-bezier(0.5, 0, 0.75, 0), transform 0.32s cubic-bezier(0.5, 0, 0.75, 0), background-color 0.2s;
+    transition-delay: calc((6 - var(--i, 0)) * 35ms);
   }
   #mobile-menu[data-open="true"] .mobile-link {
     opacity: 1;
@@ -243,10 +207,10 @@
   }
   /* Panel waits for the links to leave before it slides back up; backdrop follows */
   #mobile-menu {
-    transition-delay: 220ms;
+    transition-delay: 280ms;
   }
   #menu-backdrop {
-    transition-delay: 220ms;
+    transition-delay: 280ms;
   }
   #mobile-menu[data-open="true"],
   #menu-backdrop[data-open="true"] {
@@ -1013,4 +977,14 @@
 }
 #site-header:has(~ #mobile-menu[data-open="true"]) .hdr-fade {
   opacity: 0;
+}
+
+/* Menu close = the opening played backwards: links leave bottom to top (ease-in), then the panel retracts (ease-in).
+   Unlayered so it wins over the duration and easing utilities on the elements. */
+#mobile-menu:not([data-open="true"]) {
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+}
+#menu-backdrop:not([data-open="true"]) {
+  transition-duration: 400ms;
 }
