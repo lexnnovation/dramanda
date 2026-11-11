@@ -226,6 +226,42 @@
   .mobile-link[aria-current="true"] {
     color: var(--color-turquoise);
   }
+  /* Menu links fade and slide in one after another when the panel opens */
+  #mobile-menu .mobile-link {
+    opacity: 0;
+    transform: translateX(22px);
+    transition: opacity 0.25s ease, transform 0.3s ease, background-color 0.2s;
+  }
+  #mobile-menu[data-open="true"] .mobile-link {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s;
+    transition-delay: calc(140ms + var(--i, 0) * 60ms);
+  }
+  #mobile-menu[data-open="true"] #menu-close svg {
+    animation: menu-icon 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes menu-icon {
+    from {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #mobile-menu .mobile-link,
+    #mobile-menu[data-open="true"] .mobile-link {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    #mobile-menu[data-open="true"] #menu-close svg {
+      animation: none;
+    }
+  }
 
   /* ----- Stats: modern cards (white, soft shadow, turquoise icon badge) ----- */
   .stat-card {
@@ -517,6 +553,21 @@
   .car-cards .car-slide {
     align-items: stretch;
     padding: 12px 10px 30px;
+  }
+  /* Phones: give the testimonial text the full width (swipe and dots replace the side arrows) */
+  @media (max-width: 767px) {
+    .car-cards .car-stage {
+      padding: 0;
+    }
+    .car-cards .car-btn {
+      display: none;
+    }
+    .car-cards .car-slide {
+      padding: 12px 4px 26px;
+    }
+    .tcard {
+      padding: 26px 22px 22px;
+    }
   }
   .on-dark .car-btn {
     color: #fff;

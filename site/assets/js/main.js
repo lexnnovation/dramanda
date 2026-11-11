@@ -34,7 +34,9 @@
   const closeBtn = document.getElementById('menu-close');
   const panel = document.getElementById('mobile-menu');
   const backdrop = document.getElementById('menu-backdrop');
+  panel.querySelectorAll('.mobile-link').forEach((a, i) => a.style.setProperty('--i', i));
   const setMenu = (open) => {
+    panel.dataset.open = String(open);
     panel.classList.toggle('translate-x-full', !open);
     panel.classList.toggle('invisible', !open);
     panel.setAttribute('aria-hidden', String(!open));
