@@ -229,8 +229,11 @@
   /* Menu links fade and slide in one after another when the panel opens */
   #mobile-menu .mobile-link {
     opacity: 0;
-    transform: translateX(22px);
-    transition: opacity 0.25s ease, transform 0.3s ease, background-color 0.2s;
+    transform: translateY(-16px);
+    text-align: center;
+    font-size: 19px;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s;
+    transition-delay: calc((6 - var(--i, 0)) * 45ms);
   }
   #mobile-menu[data-open="true"] .mobile-link {
     opacity: 1;
@@ -238,18 +241,32 @@
     transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s;
     transition-delay: calc(140ms + var(--i, 0) * 60ms);
   }
-  #mobile-menu[data-open="true"] #menu-close svg {
-    animation: menu-icon 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  /* Panel waits for the links to leave before it slides back up; backdrop follows */
+  #mobile-menu {
+    transition-delay: 220ms;
   }
-  @keyframes menu-icon {
-    from {
-      opacity: 0;
-      transform: rotate(-90deg) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
+  #menu-backdrop {
+    transition-delay: 220ms;
+  }
+  #mobile-menu[data-open="true"],
+  #menu-backdrop[data-open="true"] {
+    transition-delay: 0s;
+  }
+  /* Hamburger bars morph into an X (and back) */
+  #menu-toggle .bar {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s;
+  }
+  #menu-toggle[aria-expanded="true"] .bar-1 {
+    transform: translateY(6px) rotate(45deg);
+  }
+  #menu-toggle[aria-expanded="true"] .bar-2 {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  #menu-toggle[aria-expanded="true"] .bar-3 {
+    transform: translateY(-6px) rotate(-45deg);
   }
   @media (prefers-reduced-motion: reduce) {
     #mobile-menu .mobile-link,
@@ -258,8 +275,12 @@
       transform: none;
       transition: none;
     }
-    #mobile-menu[data-open="true"] #menu-close svg {
-      animation: none;
+    #mobile-menu,
+    #menu-backdrop {
+      transition-delay: 0s;
+    }
+    #menu-toggle .bar {
+      transition: none;
     }
   }
 
@@ -980,4 +1001,16 @@
     height: 100%;
     border: 0;
   }
+}
+
+/* While the mobile menu is open the navbar becomes part of the (navy) panel: no dark bar or fade on top of it.
+   Unlayered on purpose so it wins over the utility classes on the header. */
+#site-header:has(~ #mobile-menu[data-open="true"]) {
+  background-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+#site-header:has(~ #mobile-menu[data-open="true"]) .hdr-fade {
+  opacity: 0;
 }

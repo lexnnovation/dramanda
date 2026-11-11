@@ -31,25 +31,24 @@
 
   /* ---------- Mobile menu ---------- */
   const toggle = document.getElementById('menu-toggle');
-  const closeBtn = document.getElementById('menu-close');
   const panel = document.getElementById('mobile-menu');
   const backdrop = document.getElementById('menu-backdrop');
   panel.querySelectorAll('.mobile-link').forEach((a, i) => a.style.setProperty('--i', i));
   const setMenu = (open) => {
     panel.dataset.open = String(open);
-    panel.classList.toggle('translate-x-full', !open);
+    backdrop.dataset.open = String(open);
+    panel.classList.toggle('-translate-y-full', !open);
     panel.classList.toggle('invisible', !open);
     panel.setAttribute('aria-hidden', String(!open));
     backdrop.hidden = false;
     backdrop.classList.toggle('invisible', !open);
     backdrop.classList.toggle('opacity-0', !open);
     toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.style.overflow = open ? 'hidden' : '';
-    if (open) closeBtn.focus();
-    else if (document.activeElement && panel.contains(document.activeElement)) toggle.focus();
+    if (!open && document.activeElement && panel.contains(document.activeElement)) toggle.focus();
   };
-  toggle.addEventListener('click', () => setMenu(true));
-  closeBtn.addEventListener('click', () => setMenu(false));
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
   backdrop.addEventListener('click', () => setMenu(false));
   panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (e) => {

@@ -36,9 +36,9 @@
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2">Skip to content</a>
 
   <!-- ===== Header (sticky) ===== -->
-  <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-300 data-[scrolled=true]:bg-black/85 data-[scrolled=true]:shadow-[0_2px_20px_rgba(0,0,0,.35)] data-[scrolled=true]:backdrop-blur-md" data-scrolled="false">
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 max-lg:bg-navy transition-[background-color,box-shadow,backdrop-filter] duration-300 data-[scrolled=true]:bg-navy/95 data-[scrolled=true]:shadow-[0_2px_20px_rgba(10,30,40,.4)] data-[scrolled=true]:backdrop-blur-md" data-scrolled="false">
     <!-- Soft dark fade behind the bar before scrolling, so the white menu stays readable over bright video frames. Fades out once the bar gets its solid background. -->
-    <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[150%] bg-gradient-to-b from-black/70 via-black/35 to-transparent transition-opacity duration-300 in-data-[scrolled=true]:opacity-0" aria-hidden="true"></div>
+    <div class="hdr-fade pointer-events-none max-lg:hidden absolute inset-x-0 top-0 -z-10 h-[150%] bg-gradient-to-b from-navy/80 via-navy/40 to-transparent transition-opacity duration-300 in-data-[scrolled=true]:opacity-0" aria-hidden="true"></div>
     <div class="mx-auto flex h-[76px] max-w-[1140px] items-center justify-between px-5 transition-[height] duration-300 lg:h-[96px] lg:data-[scrolled=true]:h-[76px]" id="header-bar">
       <a href="/" data-top class="block shrink-0" aria-label="Dr. Amanda Foo-Ryland, back to top">
         <img src="assets/img/logo-white-544.webp" width="272" height="79" alt="Dr. Amanda Foo-Ryland Logo" class="h-auto w-[160px] lg:w-[205px]">
@@ -57,17 +57,14 @@
       </nav>
 
       <button type="button" id="menu-toggle" class="flex h-11 w-11 items-center justify-center rounded-lg text-white lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar bar-1" d="M3 6h18"/><path class="bar bar-2" d="M3 12h18"/><path class="bar bar-3" d="M3 18h18"/></svg>
       </button>
     </div>
   </header>
 
   <!-- Mobile slide-in panel -->
-  <div id="menu-backdrop" class="invisible fixed inset-0 z-[60] bg-black/60 opacity-0 backdrop-blur-[3px] transition-opacity duration-[450ms] lg:hidden" hidden></div>
-  <aside id="mobile-menu" class="invisible fixed inset-y-0 right-0 z-[70] flex w-[min(320px,85vw)] translate-x-full flex-col bg-black px-6 py-6 text-white shadow-[-20px_0_40px_rgba(0,0,0,.4)] transition-[transform,visibility] duration-[450ms] ease-[cubic-bezier(.22,1,.36,1)] lg:hidden aria-label="Menu" aria-hidden="true">
-    <button type="button" id="menu-close" class="mb-6 ml-auto flex h-11 w-11 items-center justify-center rounded-lg" aria-label="Close menu">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
-    </button>
+  <div id="menu-backdrop" class="invisible fixed inset-0 z-[40] bg-black/60 opacity-0 backdrop-blur-[3px] transition-[opacity,visibility] duration-[450ms] lg:hidden" hidden></div>
+  <aside id="mobile-menu" class="invisible fixed inset-x-0 top-0 z-[45] flex max-h-dvh -translate-y-full flex-col overflow-y-auto rounded-b-[28px] bg-navy px-6 pb-8 pt-[88px] text-white shadow-[0_30px_50px_rgba(0,0,0,.45)] transition-[transform,visibility] duration-[450ms] ease-[cubic-bezier(.22,1,.36,1)] lg:hidden" aria-label="Menu" aria-hidden="true">
     <nav aria-label="Mobile">
       <ul class="flex flex-col">
         <li><a href="#home" class="mobile-link">Home</a></li>
