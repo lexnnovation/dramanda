@@ -156,3 +156,17 @@ Footer credit now reads "Created by Lexnnovation", linked to https://x.com/lexnn
 
 ## Update 2026-11-07: Phase 6 accessibility change (owner chose "navy text on cyan")
 White text on #52CAD3 (1.95:1) and #01BFCF (2.24:1) failed AA, so text and icons on the cyan boxes are now navy #1A3F50 (5.75:1 and 5.0:1). The cyan shades are unchanged. Affected: GET IN TOUCH pills, stat cards, testimonial cards, contact panel text, BUY BOOK NOW buttons, carousel arrows and dots, the Dream Teams link.
+
+## Update 2026-11-11: redesign and launch (owner-requested changes since the live-site rebuild)
+The site went live on 2026-11-11 (Coolify on Hetzner, DNS on GoDaddy nameservers). The wording, section order and links are unchanged. Only the look and a few structural details changed:
+- **Look:** Mel Robbins' site was the reference, brand colours only (turquoise `#52CAD3`, cyan `#01BFCF`, navy `#1A3F50`, off-white). One font, Plus Jakarta Sans (replaces Poppins, Lato and Montserrat). Section titles have one turquoise highlight box on the key word. Buttons are turquoise pills with an arrow and no outline. Sections alternate white, off-white, navy and turquoise.
+- **Navbar:** desktop menu links sit in a white pill, with a navy fade behind the bar over the video until you scroll, then a solid navy bar. Mobile has a solid navy bar and a navy menu that drops down from under it (links stagger in, closing plays the opening in reverse, the hamburger turns into an X). The header logo goes to `/`, and a round back-to-top button appears after scrolling.
+- **Hero:** only the top baked-in black bar of the video is cropped. A "Scroll" cue sits bottom-left on desktop only.
+- **Stats:** five square white cards (one row on desktop, two per row on mobile), with a two-line label under each number.
+- **About:** pull-quote taken from the existing About text (“We only get one life, it’s happening right now.”), larger body text, signatures at 260 px (desktop) and 200 px (mobile); the signature under the photo is desktop only.
+- **Show Reel** is in a rounded frame. **As seen on** is a full-width strip with greyscale logos that turn colour on hover. **Books** have large titles and a dotted burst behind the covers. **Videos** have rounded thumbnails and a round play button. **Clients** are white logo tiles on a turquoise band.
+- **Testimonials:** the cards now sit in the Testimonials section under the video (on the live site they were under "Get in Touch"). They are white cards with a cyan quote badge and a ringed avatar, and use the full width on phones.
+- **Get in Touch:** the form and contact details are one rounded turquoise card.
+- **Mobile fix:** the page no longer scrolls sideways on phones (the book burst is clipped).
+- **SEO/AI:** meta description (approved, long version), Open Graph and Twitter tags, JSON-LD (`WebSite`, `ProfilePage`, `Person`, two `Book`), `sitemap.xml`, `robots.txt` and `llms.txt`.
+- **Contact form:** Formspree form `mdeevwzw`. Notifications go to the owner and to Amanda. The `_gotcha` honeypot is in place, and Formshield is the owner's choice in Formspree.

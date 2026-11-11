@@ -37,7 +37,7 @@
   <header id="site-header" class="fixed inset-x-0 top-0 z-50 max-lg:bg-navy transition-[background-color,box-shadow,backdrop-filter] duration-300 data-[scrolled=true]:bg-navy/95 data-[scrolled=true]:shadow-[0_2px_20px_rgba(10,30,40,.4)] data-[scrolled=true]:backdrop-blur-md" data-scrolled="false">
     <!-- Soft dark fade behind the bar before scrolling, so the white menu stays readable over bright video frames. Fades out once the bar gets its solid background. -->
     <div class="hdr-fade pointer-events-none max-lg:hidden absolute inset-x-0 top-0 -z-10 h-[150%] bg-gradient-to-b from-navy/80 via-navy/40 to-transparent transition-opacity duration-300 in-data-[scrolled=true]:opacity-0" aria-hidden="true"></div>
-    <div class="mx-auto flex h-[76px] max-w-[1140px] items-center justify-between px-5 transition-[height] duration-300 lg:h-[96px] lg:data-[scrolled=true]:h-[76px]" id="header-bar">
+    <div class="mx-auto flex h-[67px] max-w-[1140px] items-center justify-between px-5 transition-[height] duration-300 lg:h-[96px] lg:data-[scrolled=true]:h-[76px]" id="header-bar">
       <a href="/" data-top class="block shrink-0" aria-label="Dr. Amanda Foo-Ryland, back to top">
         <img src="assets/img/logo-white-544.webp" width="272" height="79" alt="Dr. Amanda Foo-Ryland Logo" class="h-auto w-[160px] lg:w-[205px]">
       </a>
@@ -62,7 +62,7 @@
 
   <!-- Mobile slide-in panel -->
   <div id="menu-backdrop" class="invisible fixed inset-0 z-[40] bg-black/60 opacity-0 backdrop-blur-[3px] transition-[opacity,visibility] duration-[450ms] lg:hidden" hidden></div>
-  <aside id="mobile-menu" class="invisible fixed inset-x-0 top-0 z-[45] flex max-h-dvh -translate-y-full flex-col overflow-y-auto rounded-b-[28px] bg-navy px-6 pb-8 pt-[88px] text-white shadow-[0_30px_50px_rgba(0,0,0,.45)] transition-[translate,visibility] duration-[450ms] ease-[cubic-bezier(.22,1,.36,1)] lg:hidden" aria-label="Menu" aria-hidden="true">
+  <aside id="mobile-menu" class="invisible fixed inset-x-0 top-0 z-[45] flex max-h-dvh -translate-y-full flex-col overflow-y-auto rounded-b-[28px] bg-navy px-6 pb-8 pt-[79px] text-white shadow-[0_30px_50px_rgba(0,0,0,.45)] transition-[translate,visibility] duration-[450ms] ease-[cubic-bezier(.22,1,.36,1)] lg:hidden" aria-label="Menu" aria-hidden="true">
     <nav aria-label="Mobile">
       <ul class="flex flex-col">
         <li><a href="#home" class="mobile-link">Home</a></li>
@@ -78,7 +78,7 @@
 
   <main id="main">
     <!-- ===== Hero ===== -->
-    <section id="home" class="bg-black max-lg:pt-[76px]" aria-label="Introduction video">
+    <section id="home" class="bg-black max-lg:pt-[67px]" aria-label="Introduction video">
       <h1 class="sr-only">Dr. Amanda Foo-Ryland, international keynote speaker and best selling author</h1>
       <!-- The video covers the whole hero and runs underneath the header. The file has a black bar baked in at the top (about 13% of the frame), so the iframe is scaled up by about 1.15 and shifted up to push only that bar out of the clipped box. The bottom (with the captions) stays. Poster is cropped the same way. -->
       <div class="relative aspect-video w-full overflow-hidden bg-black bg-cover bg-center [container-type:size] lg:aspect-[2110/1427]" style="background-image:url(assets/img/hero-poster.webp)">
